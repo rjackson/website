@@ -46,6 +46,11 @@ body.guides .highlight {
   &.handlebars .ribbon {
     @include hidpi('handlebars-ribbon', png);
   }
+
+}
+
+.highlight.hidden {
+  display: none;
 }
 
 .CodeRay {

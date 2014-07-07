@@ -11,7 +11,9 @@ module Highlighter
 
   module Helpers
     def _highlight(string, language, class_name=nil)
-      result = %Q{<div class="highlight #{language} #{class_name}">}
+      language, type = language.to_s.split('-')
+
+      result = %Q{<div class="highlight #{type} #{language} #{class_name} #{type == 'modules' ? 'hidden' : ''}">}
       result += '<div class="ribbon"></div>'
       result += '<div class="scroller">'
       code = CodeRay.scan(string, language)

@@ -11,8 +11,24 @@ the template, and implementing its `model` hook.
 For example, to provide some model data to the `photos` template, we
 would define an `App.PhotosRoute` object:
 
-```js
+```js-globals
 App.PhotosRoute = Ember.Route.extend({
+  model: function() {
+    return [{
+      title: "Tomster",
+      url: "http://emberjs.com/images/about/ember-productivity-sm.png"
+    }, {
+      title: "Eiffel Tower",
+      url: "http://emberjs.com/images/about/ember-structure-sm.png"
+    }];
+  }
+});
+```
+
+```js-modules
+// app/routes/photos.js
+
+export default Ember.Route.extend({
   model: function() {
     return [{
       title: "Tomster",
